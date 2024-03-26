@@ -1,0 +1,314 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #e6e6e6;
+}
+
+header {
+  padding: 30px 4% 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  margin: 0; padding: 0;
+  font-size: 20px;
+}
+
+a {	
+  text-decoration: none;
+  color: #fdfafa;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  margin: 0 0 0 15px;
+  font-size: 14px;
+}
+
+nav {
+  margin: 0 0 0 auto;
+}
+
+.pc-nav ul li a {
+  position: relative;
+  display: inline-block;
+}
+
+.pc-nav ul li a i {
+  position: absolute;
+  top: 0; /* アイコンを文字の上に配置する */
+  /* left: 25px; */
+  margin-right: 300px; /* アイコン間の間隔を設定 */
+
+}
+
+.pc-nav ul li a span {
+  display: block;
+  padding-top: 17px; /* テキストの上にスペースを作る */
+  padding-left: 20px; /* アイコンの右にテキストを配置する */
+}
+
+#blueBtn {
+  background-color: #a0d8ea; /* ボタンの初期背景色を青に設定 */
+  color: white; /* テキスト色を白に設定 */
+  padding: 10px 20px; /* ボタンのパディングを設定 */
+  border: none; /* ボーダーを削除 */
+  border-radius: 5px; /* ボーダーの角を丸くする */
+  cursor: pointer; /* カーソルをポインターに設定 */
+}
+
+#buttonContainer {
+  text-align: center; /* ボタンを中央寄せにします */
+}
+
+#buttonContainer button {
+  display: inline-block; /* ボタンを横並びに配置します */
+  margin: 0 10px; /* ボタン間のマージンを設定します */
+  padding: 10px 20px; /* ボタンのパディングを設定します */
+  border: none; /* ボタンのボーダーをなくします */
+  border-radius: 5px; /* ボタンの角を丸くします */
+  cursor: pointer; /* マウスカーソルをポインターに変更します */
+  outline: none; /* ボタンにフォーカスしたときのアウトラインを削除します */
+}
+
+#redBtn {
+  background-color: red; /* 赤色の背景色を設定します */
+  color: white; /* テキスト色を白に設定します */
+}
+
+#blueBtn {
+  background-color: #a0d8ea; /* 青色の背景色を設定します */
+  color: white; /* テキスト色を白に設定します */
+}
+
+#greenBtn {
+  background-color: green; /* 緑色の背景色を設定します */
+  color: white; /* テキスト色を白に設定します */
+}
+.scroll-arrow {
+  position: fixed;
+  bottom: 20px; /* 画面下部からの距離 */
+  left: 50%; /* 画面の中央に配置 */
+  transform: translateX(-50%); /* 中央寄せ */
+  width: 30px; /* 矢印の幅 */
+  height: 30px; /* 矢印の高さ */
+  background-color: #000; /* 矢印の色 */
+  border-left: 2px solid #fff; /* 矢印の左側の線 */
+  border-bottom: 2px solid #fff; /* 矢印の下側の線 */
+  transform: rotate(-45deg); /* 矢印の回転 */
+  animation: arrowMove 1s infinite alternate; /* アニメーションの設定 */
+}
+
+@keyframes arrowMove {
+  from {
+      bottom: 300px; /* 初期位置 */
+  }
+  to {
+      bottom: 250px; /* 最終位置 */
+  }
+}
+
+.theme-checkbox-container {
+  display: flex;
+  justify-content: center;
+}
+
+.theme-checkbox {
+  --toggle-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 6.25em;
+  height: 3.125em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 99em;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--toggle-size);
+  background-color: red; /* 赤色の背景色を設定します */
+  color: white; /* テキスト色を白に設定します */
+}
+
+.theme-checkbox::before {
+  content: "";
+  width: 2.25em;
+  height: 2.25em;
+  position: absolute;
+  top: 0.438em;
+  left: 0.438em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.theme-checkbox:checked::before {
+  left: calc(100% - 2.25em - 0.438em);
+  background-position: 0;
+}
+
+.theme-checkbox:checked {
+  background-position: 100%;
+}
+
+#header {
+  background-color: #333; /* デフォルトの背景色 */
+  color: white; /* デフォルトの文字色 */
+  padding: 10px;
+  text-align: center;
+}
+
+.box {
+	/* display: flex; */
+	/* Flexコンテナにする */
+	align-items: center;
+  width: 100%; /* ボックスの幅を100%に設定 */
+  background-image: url('./img/1.jpg');; /* ボックスの背景画像 */
+  background-size: cover; /* 背景画像をボックス全体に広げる 
+*/
+text-align: center; /* テキストを中央揃え */
+height: 100px;
+	/* ボックスの高さ */
+
+	/* ボックスの幅 */
+	/* padding: 20px; */
+	/* 内側の余白 */
+	background-color: rgb(255, 255, 255);
+	/* 背景色 */
+	/* ボーダーのスタイル */
+	margin: 0 auto;
+	/* 左右のマージンを自動に設定して中央に配置 */
+
+}
+
+.title {
+  font-weight: bold; /* テキストを太字にする */
+  font-family: Arial, sans-serif; /* テキストのフォントを変更する */
+}
+
+.title2 {
+  position: relative;
+}
+
+.title2::before, .title2::after {
+  content: '';
+  position: absolute;
+  top: 95%;
+  width: 50%;
+  height: 1px;
+  background-color: black;
+}
+
+.title2::before {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.title2::after {
+  right: 0;
+  transform: translateY(-50%);
+}
+
+
+/* .popup-container {
+  display: none;
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-image {
+  max-width: 200px;
+  max-height: 200px;
+} */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center; /* 画像を中央寄せ */
+
+}
+
+/* .gallery img {
+  max-width: 100px;
+  cursor: pointer;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+} */
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.selected-image {
+  width: 100px;
+  height: auto;
+  cursor: pointer; /* カーソルをポインターに変更する */
+  transition: transform 0.3s ease; /* アニメーション効果を追加 */
+
+}
+
+.selected-image:hover {
+  transform: translateY(-5px); /* カーソルが合わさったときに画像を5px上に移動 */
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 30px;
+  width: 95%;
+  height: 80%;
+  background-color: rgba(250, 249, 249, 0.982); /* 半透明な背景色 */
+  text-align: center;
+  color: #010101;
+  display: flex; /* Flexboxを使用 */
+  
+}
+
+.popup img {
+  width: 200px; /* 画像の幅を200pxに設定 */
+  order: 2; /* 画像をFlexboxの順序で右側に配置 */
+}
+
+.popup .text-container {
+  width: 30%; /* テキストの幅を30%に設定 */
+  padding: 0 15px; /* 左右に15pxのパディングを設定 */
+  box-sizing: border-box; /* パディングを含めた幅を指定 */
+  order: 1; /* テキストをFlexboxの順序で左側に配置 */
+}
