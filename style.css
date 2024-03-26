@@ -312,3 +312,20 @@ height: 100px;
   box-sizing: border-box; /* パディングを含めた幅を指定 */
   order: 1; /* テキストをFlexboxの順序で左側に配置 */
 }
+
+.close-btn {
+  position: absolute;
+  top: 0; /* ボタンの位置を上端に配置 */
+  right: 0; /* ボタンの位置を右端に配置 */
+  width: 30px; /* ボタンの幅を調整 */
+  height: 30px; /* ボタンの高さを調整 */
+  display: flex; /* 中央配置のために Flexbox を使用 */
+  align-items: center; /* 垂直方向の中央配置 */
+  justify-content: center; /* 水平方向の中央配置 */
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5); /* ボタンの背景色を設定 */
+  color: #fff; /* ボタンのテキスト色を設定 */
+  border: none; /* ボタンのボーダーをなしに設定 */
+  border-radius: 50%; /* ボタンを丸くする */
+  font-size: 20px; /* ボタンのテキストサイズを設定 */
+}
